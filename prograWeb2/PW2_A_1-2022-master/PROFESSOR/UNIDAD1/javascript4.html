@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Javascript classes
+        </title>
+        <script type="text/javascript">
+            function Person(firstName, lastName) { // Clase y constructor
+                this.firstName = firstName;
+                this.lastName = lastName;                
+            }
+
+            Person.prototype.sayHi = function() {
+                console.log(this.firstName + ' ' + this.lastName);
+            }
+
+            var person1 = new Person('Juan', 'Perez');
+            person1.sayHi();
+
+            class ES6Person {
+                constructor(firstName, lastName) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+
+                showData() {
+                    console.log(`${this.firstName} ${this.lastName}`);
+                }
+            }
+
+            class Student extends ES6Person {
+                constructor(firstName, lastName, semester) {
+                    super(firstName, lastName);
+                    this.semester = semester;
+                }
+
+                showData() {
+                    console.log(`${this.firstName} ${this.lastName} ${this.semester}`);
+                }
+            }
+
+            class Professor extends ES6Person {
+                constructor(firstName, lastName, salary) {
+                    super(firstName, lastName);
+                    this.salary = salary;
+                }
+
+                showData() {
+                    console.log(`${this.firstName} ${this.lastName} ${this.salary}`);
+                }
+            }
+
+            var person2 = new ES6Person('John', 'Smith');
+            person2.showData();
+
+            var student1 = new Student('Robert', 'Lopez', 3);
+            student1.showData();
+
+            var professor1 = new Professor('Albert', 'Perez', 3000);
+            professor1.showData();
+
+            let students = [
+                new Student('Albert', 'Lopez', 3),
+                new Student('Juan', 'Perez', 2),
+                new Student('Robert', 'Flores', 4)
+            ];
+
+            for (let student of students) {
+                document.write(student.firstName + ' ' + student.lastName + '<br>');
+            }
+        </script>
+    </head>
+    <body>
+        <h2>
+            Javascript classes
+        </h2>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            HTTP Post example
+        </title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="server_get.php" method="get">
+            Nombre: <input name="nombre"><br>
+            Apellido: <input name="apellido"><br>
+            <button type="submit">Submit</button>
+        </form>
+        <form action="server_post.php" method="post">
+            <div>
+                <label for="txtProductName">Product name:</label>
+                <input id="txtProductName" name="name">
+            </div>
+            <div>
+                <label for="txtProductDescription">Product description:</label>
+                <input id="txtProductDescription" name="description">
+            </div>
+            <div>
+                <label for="txtProductPrice">Product price:</label>
+                <input id="txtProductPrice" name="price">
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example CSS</title>
+        <style type="text/css">
+            body {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                font-family: Arial;
+                color: #009;
+                background-color: #cfc;
+            }
+
+            div {
+                background-color: red;
+                color: rgba(170, 230, 200, 1);
+                font-family: Verdana;
+                font-size: 35pt;
+                font-weight: bold;
+            }
+
+            .class1 {
+                background-color: #009;
+                color: #fff;
+                font-family: Georgia;
+                font-size: 20pt;
+                font-weight: bold;
+            }
+
+            #example {
+                background-color: black;
+                color: #eaf7ff;
+                font-family: Impact;
+                font-size: 50pt;
+                padding: 50px 60px 70px 80px;
+                border-width: 20px 30px 40px 50px;
+                border-style: solid;
+                border-color: blue;
+                margin: 50px;
+            }
+
+            #degradados {
+                background: linear-gradient(45deg, blue 20%, yellow 60%, red 90%);
+                height: 200px;
+                margin: 100px;
+            }
+
+            #imagepattern {
+                background-image: url(tile.jpg);
+                background-repeat: round;
+                background-clip: padding-box;
+                color: #009;
+                height: 300px;
+                margin: 50px;
+                border-width: 20px;
+                border-color: black;
+                border-style: dashed;
+                border-radius: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Exercise</h1>
+        <div style="background-color: blue; color: white; font-family: Arial; font-size: 18pt; font-weight: bold;">
+            This is the first div
+        </div>
+        <div>
+            This is the second div
+        </div>
+        <div>
+            This is the third div
+        </div>
+        <div id="example">
+            This is the fourth div
+        </div>
+        <div class="class1">
+            This is the fifth div
+        </div>
+        <div class="class1">
+            This is the sixth div
+        </div>
+        <div id="degradados">
+            Ejemplo degradados
+        </div>
+        <div id="imagepattern">
+            Image pattern
+        </div>
+
+        <!--
+            Ejercicio:
+            Crear dos elementos: Fondo degradado, fondo con patrón de imagen
+            Configurar el márgen, padding, altura, etc.
+
+            14:35
+        -->
+    </body>
+</html>

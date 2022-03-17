@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Javascript functions
+        </title>
+        <script type="text/javascript">
+            function suma(a, b) {
+                return a + b;
+            }
+
+            let subtract = function(a, b) {  // notación de callback
+                return a - b;
+            }
+
+            let multiply = (a, b) => {
+                return a * b;
+            }
+
+            let divide = (a, b) => {
+                return a / b;
+            }
+
+            function buttonClick() {
+                let num1 = parseInt(document.getElementById('txtNum1').value);
+                let num2 = parseInt(document.getElementById('txtNum2').value);
+                let operation = parseInt(document.getElementById('cmbOperation').value);
+
+                switch (operation) {
+                    case 1:
+                        alert(`El valor de la suma es ${suma(num1, num2)}`);
+                        break;
+                    case 2:
+                        alert(`El valor de la resta es ${subtract(num1, num2)}`);
+                        break;
+                    case 3:
+                        alert(`El valor de la multiplicación es ${multiply(num1, num2)}`);
+                        break;
+                    case 4:
+                        alert(`El valor de la división es ${divide(num1, num2)}`);
+                        break;
+                }
+
+            }
+
+            console.log('La suma es', suma(3, 5));
+            console.log('La resta es', subtract(5, 3));
+            console.log('La multiplicación es', multiply(5, 3));
+        </script>
+    </head>
+    <body>
+        <h1>Javascript functions</h1>
+        <form>
+            <div>
+                <label for="txtNum1">Enter number 1</label>
+                <input id="txtNum1" type="number">
+            </div>
+            <div>
+                <label for="cmbOperation">Operation:</label>
+                <select id="cmbOperation">
+                    <option value="1">+</option>
+                    <option value="2">-</option>
+                    <option value="3">*</option>
+                    <option value="4">/</option>
+                </select>
+            </div>
+            <div>
+                <label for="txtNum2">Enter number 2</label>
+                <input id="txtNum2" type="number">
+            </div>
+            <div>
+                <button type="button" onclick="buttonClick()">Operate</button>
+            </div>
+        </form>
+    </body>
+</html>

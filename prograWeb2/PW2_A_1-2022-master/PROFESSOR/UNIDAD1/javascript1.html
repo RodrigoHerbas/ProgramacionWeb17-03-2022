@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Javascript 1
+        </title>
+        <script type="text/javascript">
+            var myVar1 = 11;
+            var myVar2 = 15;
+
+            // + - * / %
+
+            console.log('El valor del módulo de la división es', myVar1 % myVar2);
+
+            if (myVar1 % 2 == 0) {
+                console.log('La variable es par.');
+            } else {
+                console.log('La variable es impar.');
+            }
+
+            // == > < >= <= !=  ===  &&  ||
+
+            var hello = (myVar1 > 10) ? 'Hola a todos' : 'Javascript';
+            console.log(hello);
+
+            if (myVar1 > 10) {
+                var x = 5;
+                console.log('El valor de x dentro del bloque es', x);
+            }
+
+            console.log('El valor de x fuera del bloque es', x);
+
+            const z = 10;
+            
+            var c = 1;
+
+            while (c <= 10) {
+                document.write(c + '<br>');
+                c++;
+            }
+
+            /**
+            Ejercicio:
+
+            Dada una variable n, calcular el factorial de n
+            utilizando un bucle while
+
+            16:00
+            */
+
+            var n = 0;
+            var i = 2;
+            var factorial = 1;
+
+            while (i <= n) {
+                factorial *= i;
+                i++;
+            }
+
+            document.write('<p>El factorial de ' + n + ' es ' + factorial + '</p>');
+
+            var dia = 1;
+
+            switch (dia) {
+                case 1:
+                    document.write('<p>El día es lunes</p>');
+                    break;
+                case 2:
+                    document.write('<p>El día es martes</p>');
+                    break;
+                case 3:
+                    document.write('<p>El día es miércoles</p>');
+                    break;
+                case 4:
+                    document.write('<p>El día es jueves</p>');
+                    break;
+                case 5:
+                    document.write('<p>El día es viernes</p>');
+                    break;
+                default:
+                    document.write('<p>Otro día</p>');
+                    break;
+            }
+
+            // Bucles for
+
+            for (let j = 1; j <= 10; j++) {
+                document.write("<p>" + j + "</p>");
+            }
+
+            document.write('<h2>for( in )</h2>')
+
+            var array1 = ['Uno', 'Dos', 'Tres'];
+            array1.push('Cuatro');
+            array1.push('Cinco');
+
+            for (let idx in array1) {
+                document.write('<p>' + array1[idx] + '</p>');
+            }
+
+            document.write('<h2>for( of )</h2>')
+
+            for (let element of array1) {
+                document.write('<p>' + element + '</p>');
+            }
+
+            /**
+            Ejercicio: Crear un arreglo de los elementos 10, 20, 30, 40, 50
+            Iterar por medio de for (in) y for(of)
+
+            16:30
+            */
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
