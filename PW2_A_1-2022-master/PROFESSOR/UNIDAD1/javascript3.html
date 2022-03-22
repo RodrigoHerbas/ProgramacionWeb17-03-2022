@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Javascript objects
+        </title>
+        <script type="text/javascript">
+            let person = {
+                firstName: 'John',
+                lastName: 'Doe',
+                age: 30,
+                city: 'Cochabamba',
+                address: 'Ayacucho Ave.',
+                //sayHi: function() {
+                sayHi() {
+                    console.log('Calling sayHi', this.firstName, this.lastName);
+                },
+                get fullName() { // Atributo compuesto
+                    return this.firstName + ' ' + this.lastName;
+                },
+                set fullName(value) {
+                    let fullNameArray = value.split(' ');
+                    this.firstName = fullNameArray[0];
+                    this.lastName = fullNameArray[1];
+                },
+                get fullAddress() {
+                    return `${this.city},${this.address}`;
+                },
+                set fullAddress(value) {
+                    [this.city, this.address] = value.split(',');
+                }
+            };
+            console.log(person.firstName, person.lastName, person.address);
+
+            person.fullName = 'Juan Perez';
+
+            console.log('Full name', person.fullName);
+
+            person.sayHi();
+            person.fullAddress = 'La Paz,6 de agosto Ave.';
+
+            console.log('Full address', person.fullAddress);
+
+            let student = {
+                semester: 3,
+                __proto__: person
+            }
+
+            student.firstName = 'Robert';
+
+            console.log(student.fullName);
+
+            let professor = {
+                salary: 3000,
+                __proto__: person
+            }
+
+            console.log(professor);
+
+            for (let attribute in student) {
+                if (student.hasOwnProperty(attribute)) {
+                    document.write('Own attribute: ' + attribute + '<br>');
+                } else {
+                    document.write('Inherited attribute: ' + attribute + '<br>');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>
+            Javascript objects
+        </h2>
+    </body>
+</html>

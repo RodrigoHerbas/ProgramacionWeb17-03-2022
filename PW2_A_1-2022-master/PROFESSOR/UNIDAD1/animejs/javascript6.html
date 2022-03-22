@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AnimeJS animations</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+        <style>
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+            }
+
+            .menu-container {
+                position: absolute;
+                background-color: #00f;
+                padding: 20px;
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menu-list {
+                color: #fff;
+                font-size: 22px;
+                display: none;
+            }
+
+            .el {
+                opacity: 0;
+                color: #fff;
+            }
+
+            a:visited {
+                color: #fff;
+            }
+
+            #ball {
+                position: fixed;
+                background-color: white;
+                border-radius: 100%;
+                z-index: -100;
+            }
+
+            #logo {
+                position: fixed;
+                text-align: center;
+                padding: 20px;
+                background-color: #000;
+                z-index: -100;
+                opacity: 0;
+            }
+        </style>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body translate="no" class="bg-dark">
+        <div class="menu-container">
+            <div class="menu-list">
+                <div class="line">
+                    <div class="el p-3">
+                        <a href="#">Option 1</a>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="el p-3">
+                        <a href="#">Option 2</a>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="el p-3">
+                        <a href="#">Option 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="ball"></div>
+            <div id="logo" class="text-white" style="text-align: center;">
+                <h1>UNIVALLE</h1>
+                <h3>La respuesta científica al futuro</h3>
+            </div>
+            <div>
+                <svg width="800" height="800" viewBox="0 0 800 800">
+                    <g>
+                        <path id="spiral" fill="none" stroke="none" d="m 340.97168,391.8559 c 10.73651,16.28985 -16.66138,22.50943 -27.0748,17.84478 -28.21974,-12.64092 -25.19083,-51.49151 -8.61477,-71.99439 29.65068,-36.67485 85.73933,-30.16002 116.91398,0.61526 45.75005,45.16395 35.38179,120.48979 -9.84528,161.83356 -60.28056,55.10474 -155.42367,40.71749 -206.75315,-19.0753 -64.5929,-75.24311 -46.11341,-190.44619 28.30532,-251.67273 90.13105,-74.15354 225.51889,-51.54445 296.59232,37.53533 83.75758,104.97744 56.99755,260.62289 -46.76535,341.51191 C 363.93157,701.84389 187.98215,670.91971 97.298452,552.45895 -5.7421305,417.8563 29.354934,221.57158 162.52384,121.10787 311.91923,8.4027622 528.56148,47.678757 638.79451,195.56328 761.17407,359.74312 717.71479,596.75922 555.10908,716.75353 Z" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </body>
+</html>

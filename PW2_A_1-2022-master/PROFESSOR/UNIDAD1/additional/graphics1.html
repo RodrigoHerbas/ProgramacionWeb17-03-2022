@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Additional example
+        </title>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                margin: 0;
+            }
+        </style>
+        <script>
+            var speed = 3;
+            var rectangle;
+            var circle;
+
+            class Rectangle {
+                constructor(fillColor, strokeColor, x, y, width, height, ctx) {
+                    this.fillColor = fillColor;
+                    this.strokeColor = strokeColor;
+                    this.x = x;
+                    this.y = y;
+                    this.width = width;
+                    this.height = height;
+                    this.ctx = ctx;
+                }
+
+                moveUp() {
+                    this.y -= speed;
+                }
+
+                moveDown() {
+                    this.y += speed;
+                }
+
+                moveLeft() {
+                    this.x -= speed;
+                }
+
+                moveRight() {
+                    this.x += speed;
+                }
+
+                update() {
+                    this.ctx.fillStyle = this.fillColor;
+                    this.ctx.strokeStyle = this.strokeColor;
+                    this.ctx.lineWidth = 10;
+
+                    this.ctx.beginPath();
+                    this.ctx.rect(this.x, this.y, this.width, this.height);
+                    this.ctx.fill();
+                    this.ctx.stroke();
+                }
+            }
+
+            class Circle {
+                constructor(fillColor, strokeColor, x, y, radius, ctx) {
+                    this.fillColor = fillColor;
+                    this.strokeColor = strokeColor;
+                    this.x = x;
+                    this.y = y;
+                    this.radius = radius;
+                    this.ctx = ctx;
+                }
+
+                update() {
+                    this.ctx.fillStyle = this.fillColor;
+                    this.ctx.strokeStyle = this.strokeColor;
+                    this.ctx.lineWidth = 5;
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
+                    this.ctx.fill();
+                    this.ctx.stroke();
+                }
+            }
+
+            function updateArea() {
+                mainArea.clear();
+
+                let image = new Image();
+                image.src = 'tile.jpg';
+
+                let pattern = mainArea.context.createPattern(image, 'repeat');
+                mainArea.context.fillStyle = pattern;
+                mainArea.context.fillRect(0, 0, mainArea.canvas.width, mainArea.canvas.height);
+
+                rectangle.update();
+                circle.update();
+            }
+
+            var mainArea = {
+                start() {
+                    this.canvas = document.getElementById('animation');
+                    this.canvas.width = window.innerWidth;
+                    this.canvas.height = window.innerHeight;
+                    this.context = this.canvas.getContext('2d');
+                    this.interval = setInterval(updateArea, 10);
+                },
+                clear() {
+                    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                }
+            }
+
+            function startAnimation() {
+                mainArea.start();
+                rectangle = new Rectangle('black', 'blue', 100, 150, 100, 70, mainArea.context);
+                circle = new Circle('rgb(50, 50, 40)', 'black', 200, 200, 50, mainArea.context);
+            }
+
+            /**
+             * Ejercicio
+             * Crear un nuevo rectángulo y un círculo con colores de fondo y borde
+             * distintos y en posiciones diferentes
+             */
+
+            window.onkeydown = function(event) {
+                var key = event.key;
+
+                if (key == 'ArrowUp') {
+                    rectangle.moveUp();
+                } else if (key == 'ArrowDown') {
+                    rectangle.moveDown();
+                } else if (key == 'ArrowLeft') {
+                    rectangle.moveLeft();
+                } else if (key == 'ArrowRight') {
+                    rectangle.moveRight();
+                }
+            }
+
+            window.onload = function() {
+                startAnimation();
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="animation"></canvas>
+    </body>
+</html>
